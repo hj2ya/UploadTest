@@ -8,6 +8,7 @@ public class AppBook1 {
 	
 	private Book book;
 	private Book book2;
+	System.out.print("í•˜ì´");
 
 	
 	public AppBook1() {
@@ -29,8 +30,8 @@ public class AppBook1 {
 		this.book2 = book2;
 	}
 	
-	@Required// Å¬·¡½º¿Í book,2¿Í¹­¾îÁÜ
-	@Autowired   //ÀÚµ¿À¸·Î
+	@Required// í´ë˜ìŠ¤ì™€ book,2ì™€ë¬¶ì–´ì¤Œ
+	@Autowired   //ìë™ìœ¼ë¡œ
 	public void setBook( @Qualifier(value="book1Q")Book book, @Qualifier(value="book2Q")Book book2) {
 		this.book = book;
 		this.book2=book2;
