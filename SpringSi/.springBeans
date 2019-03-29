@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.8.3.201612191259-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[true]]></enableImports>
+	<configs>
+		<config>src/main/java/sist/com/di/memberbean.xml</config>
+		<config>src/main/java/sist/com/di/person.xml</config>
+		<config>src/main/java/sist/com/core/di/service.xml</config>
+		<config>src/main/java/sist/com/app1/di/app.xml</config>
+		<config>src/main/java/sist/com/app1/di/app2.xml</config>
+		<config>src/main/java/sist/com/app1/di/app3.xml</config>
+		<config>src/main/java/sist/com/app2/di/car.xml</config>
+		<config>src/main/java/sist/com/app3/di/com.xml</config>
+	</configs>
+	<autoconfigs>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/root-context.xml</config>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

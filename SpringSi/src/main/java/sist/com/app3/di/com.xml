@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+		<context:annotation-config/>		
+		
+		<bean id="computer1" class="sist.com.app3.di.Computer" p:maker="샘성" p:model="s1" p:position="데스크탑" p:price="125">
+		<qualifier value="computer1Q"></qualifier>
+		</bean>
+		
+		<bean id="computer2" class="sist.com.app3.di.Computer" p:maker="LG" p:model="L1" p:position="데스크탑" p:price="100">
+		<qualifier value="computer2Q"></qualifier>				
+		</bean>
+		<bean id="computer3" class="sist.com.app3.di.Computer" p:maker="LG" p:model="L1111" p:position="노트북" p:price="100">
+		<qualifier value="computer2Q"></qualifier>				
+		</bean>
+	
+		
+			
+	
+		<util:map id="map1" key-type="java.util.HashMap" value-type="sist.com.	app3.di.Computer">
+		<entry >
+		<key>
+		<value type="java.lang.Integer">1</value>
+		</key>
+		<ref bean="computer1"/>
+		</entry>
+		<entry >
+		<key>
+		<value type="java.lang.Integer">2</value>				<!-- 에노테이션 -->
+		</key>
+		<ref bean="computer2"/>
+		</entry>			
+		<entry >
+		<key>
+		<value type="java.lang.Integer">3</value>
+		</key>
+		<ref bean="computer3"/>
+		</entry>
+		</util:map>
+		
+		<!-- <bean id="store" class="sist.com.app3.di.Store">
+			<property name="properties">
+			<props>
+			<prop key="url">oracle.util.OracleDriver</prop>
+			<prop key="userName">ORANGE</prop>
+			<prop key="password">1234</prop>
+			<prop key="admin">leeguana</prop>
+			</props>			
+			</property>		
+			</bean> -->
+			
+			
+		<bean id="store" class="sist.com.app3.di.Store">
+		
+		</bean>
+		
+		<util:properties id="pro" value-type="sist.com.	app3.di.Computer">		
+		<prop key="url11">oracle.util.OracleDriver</prop>
+			<prop key="userName11">ORANGE</prop>
+			<prop key="password11">1234</prop>
+			<prop key="admin11">leeguana</prop>		
+		</util:properties>
+	
+	
+		<!-- <bean id="store" class="sist.com.app3.di.Store"> 에노테이션 안쓴거
+		<property name="map">
+		
+		
+		
+		<map>	
+		<entry>
+ 		<key>
+ 		<value type="java.lang.Integer">1</value> 		
+ 		</key>
+ 		<ref bean="computer1"/>		
+		</entry>
+		<entry>
+ 		<key>
+ 		<value type="java.lang.Integer">2</value> 		
+ 		</key>
+ 		<ref bean="computer2"/>		
+		</entry>
+		<entry>
+ 		<key>
+ 		<value type="java.lang.Integer">3</value> 		
+ 		</key>
+ 		<ref bean="computer3"/>		
+		</entry>
+				
+		</map>		
+		
+		</property>
+		
+		</bean> -->
+		
+		
+		
+		
+
+</beans>

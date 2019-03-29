@@ -1,0 +1,3 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+But growth in its carrier business, the segment that provides telecommunications products including 5G equipment to carriers around the world, dropped by 1.3%. At a press conference on Friday, rotating chairman Guo Ping said the decline was mainly because the company upped investment in research and development last year, as well as investment cycles in the global telecom industry.

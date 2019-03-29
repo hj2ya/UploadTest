@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		
+		
+		<bean id="member1" class="sist.com.di.Member" scope="singleton">
+		
+			<constructor-arg name="id" value="BLUE"></constructor-arg>   <!-- 생성자 인젝션 -->
+			<constructor-arg name="name" value="안태영"></constructor-arg>
+			<constructor-arg name="email" value="lkd@naver.com"></constructor-arg>
+			<constructor-arg name="address" value="서울시 강남구"></constructor-arg>
+			<constructor-arg name="hit" value="30"></constructor-arg>
+			<constructor-arg name="date" value="2019-03-26일"></constructor-arg>								
+		</bean>
+		
+		<bean id="member2" class="sist.com.di.Member" scope="prototype" p:id="RED" 
+		p:name="규환이" p:email="kkk@naver.com" p:address="역삼시티" p:hit="20"
+		 p:date="3월26일 화요일 " init-method="initMember">
+	
+		</bean>
+	
+	
+		<bean id="member3" class="sist.com.di.Member" scope="singleton" >
+		<property name="id" value="bong"></property>
+		<property name="name" value="이봉헌"></property>
+		<property name="email" value="kkk@naver.com"></property>
+		<property name="address" value="강남"></property>
+		<property name="hit" value="500000"></property>
+		<property name="date" value="3월26일..."></property>
+		
+		</bean>
+		
+		<bean id="bongBand" class="sist.com.di.BongBand" scope="prototype">
+		
+		<property name="map" >		
+		<map>
+		
+		
+		<entry>		
+		<key>
+		<value type="java.lang.Integer">1</value>		
+		</key>
+		<ref bean="member1"/>								
+		</entry>
+		<entry>		
+		<key>
+		<value type="java.lang.Integer">2</value>		
+		</key>
+		<ref bean="member2"/>								
+		</entry>
+		<entry>		
+		<key>
+		<value type="java.lang.Integer">3</value>		
+		</key>
+		<ref bean="member3"/>								
+		</entry>
+		
+		
+			
+		</map>		
+		</property>
+		
+		
+		
+		<property name="set">
+		<set>
+			<ref bean="member1"/>		
+		<ref bean="member2"/>		
+		<ref bean="member3"/>	
+			<ref bean="member1"/>		
+		<ref bean="member2"/>		
+		<ref bean="member3"/>	
+			<ref bean="member1"/>		
+		<ref bean="member2"/>		
+		<ref bean="member3"/>
+		</set>		
+		</property>
+		
+	<!-- 	<property name="list"  >
+		<list>
+		<ref bean="member1"/>		
+		<ref bean="member2"/>		
+		<ref bean="member3"/>		
+		</list>		
+		</property> -->
+		
+		</bean>
+
+
+
+
+
+</beans>

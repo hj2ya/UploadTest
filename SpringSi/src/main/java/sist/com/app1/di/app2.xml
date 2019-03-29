@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+<context:annotation-config/>			
+	<bean id="book1" class="sist.com.app1.di.Book" scope="singleton" init-method="selectBook">
+	<qualifier value="book1Q"></qualifier>
+	<property name="title" value="태영의 정석 좋았어"></property>
+	<property name="author" value="안태영"></property>
+	<property name="price" value="5000"></property>
+	<property name="publisher" value="태영출판"></property>
+	<property name="regdate" value="2019/03/28"></property>
+	<property name="isBn" value="isbn1234"></property>
+	</bean>
+<bean id="book2" class="sist.com.app1.di.Book" scope="singleton" init-method="selectSecondBook" 
+p:title="장규의 정석 좋았어" p:author="윤장규" p:price="3500" p:publisher="장규출판" p:regdate="2019/03/28" p:isBn="kkkkgo">
+<qualifier value="book2Q"></qualifier>
+</bean>
+<bean id="appBook2" class="sist.com.app1.di.AppBook2" scope="singleton" >
+
+</bean>
+</beans>
